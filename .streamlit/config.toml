@@ -1,8 +1,0 @@
-[server]
-headless = true
-port = 8501
-fileWatcherType = "none"  # Disable file watcher completely
-
-[browser]
-serverAddress = "0.0.0.0"
-gatherUsageStats = false

@@ -1,0 +1,23 @@
+{
+    "builds": [
+        {
+            "src": "frontend/package.json",
+            "use": "@vercel/static-build",
+            "config": { "distDir": "frontend/dist" }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/frontend/dist/$1"
+        }
+    ],
+    "env": {
+        "VITE_SUPABASE_URL": "@supabase_url",
+        "VITE_SUPABASE_KEY": "@supabase_anon_key"
+    }
+}
